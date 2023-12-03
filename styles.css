@@ -1,0 +1,212 @@
+body {
+	background-color: #babbb2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#book {
+	width: 800px;
+	height: 800px;
+	position: relative;
+	filter: drop-shadow(0px 150px 40px #0005);
+	animation: bookhover 3s infinite ease-in-out alternate;
+}
+@keyframes bookhover {
+	from {
+		transform: translateY(0px);
+		filter: drop-shadow(0px 150px 40px #0005);
+	}
+	to {
+		transform: translateY(40px);
+		filter: drop-shadow(0px 110px 20px #0005);
+	}
+}
+.cover {
+	background: linear-gradient(30deg, #59391e, #4d2d12);
+	width: 300px;
+	height: 400px;
+	position: absolute;
+	border-radius: 12px;
+	top: 240px;
+}
+.cover::after {
+	content: '';
+	background: #2e1f13;
+	height: 12px;
+	width: calc(100% - 4px);
+	position: absolute;
+	top: calc(100% - 6px);
+	right: 2px;
+	border-radius: 4px;
+}
+#coverleft {
+	left: 104px;
+	transform: rotate3d(1, 0, 0.1, 50deg);
+	animation: coverleft 3s infinite ease-in-out alternate;
+	transform-origin: bottom right;
+}
+@keyframes coverleft {
+	from {
+		transform: rotate3d(1, 0, 0.1, 50deg);
+	}
+	to {
+		transform: rotate3d(1, 0, 0.2, 50deg)
+	}
+}
+#coverright {
+	transform: scale(-1, 1) rotate3d(1, 0, 0.1, 50deg);
+	right: 404px;
+	transform-origin: bottom right;
+	animation: coverright 3s infinite ease-in-out alternate;
+}
+@keyframes coverright {
+	from {
+		transform: scale(-1, 1) rotate3d(1, 0, 0.1, 50deg);
+	}
+	to {
+		transform: scale(-1, 1) rotate3d(1, 0, 0.2, 50deg);
+	}
+}
+#coverright::after {
+	background: linear-gradient(-80deg, #2e1f13, #80502a);
+}
+.pages {
+	background: linear-gradient(30deg, #dad7d5, #ffffff);
+	width: 236px;
+	height: 330px;
+	position: absolute;
+	border-radius: 12px;
+	top: 300px;
+}
+.pages::before {
+	font-size: 8px;
+	line-height: 14px;
+	padding: 12px;
+	display: block;
+	content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum consectetur dui, eget cursus est pellentesque at. Integer vestibulum ut massa nec porta. Maecenas viverra mi eget ipsum lobortis, a euismod nulla dictum. Vestibulum id gravida augue. Mauris augue sem, blandit sit amet lobortis vitae, tempus sodales odio. Quisque blandit leo vitae lectus fermentum sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin hendrerit, ligula eget iaculis iaculis, ex nibh efficitur nibh, et condimentum nisi nulla ac mi. Duis blandit purus orci, vitae gravida est finibus nec. Duis bibendum massa a risus eleifend, vel pretium nisi tristique. Aliquam pulvinar diam eget lorem bibendum varius. Vestibulum at tellus pellentesque, imperdiet nulla id, ornare ante. Morbi nec dui ac neque porta pharetra. Donec vitae tellus in erat posuere vulputate. Curabitur velit massa, pulvinar eleifend dolor at, pulvinar tristique enim. Nullam id nibh efficitur, sollicitudin turpis ac, ornare lorem. Suspendisse potenti. Donec lobortis consequat tempus. Nam vehicula arcu semper lorem feugiat condimentum. Ut maximus justo in elit posuere, et bibendum sem dictum. Ut tristique dolor id nulla hendrerit tempus. In hac habitasse platea dictumst. Sed enim risus, congue a condimentum sit amet, egestas et nisi.';
+	background: -webkit-linear-gradient(180deg, #3330, #333);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-right: 10px;
+}
+#pagesright::before {
+	background: -webkit-linear-gradient(0deg, #3330, #333);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-left: 10px;
+	padding-right: 12px;
+	text-align: right;
+}
+.pages::after {
+	content: '';
+	background: #b2b2a8;
+	height: 50px;
+	width: calc(100% - 3px);
+	position: absolute;
+	top: calc(100% - 6px);
+	right: 3px;
+	border-radius: 0px;
+}
+#pagesleft {
+	left: 140px;
+	transform: skew(-4deg, 3deg) rotateX(50deg);
+	animation: pagesleft 3s infinite ease-in-out alternate;
+}
+@keyframes pagesleft {
+	from {
+		transform: skew(-4deg, 3deg) rotateX(50deg);
+	}
+	to {
+		transform: skew(-6deg, 8deg) rotateX(50deg) translate(6px, -12px);
+	}
+}
+#pagesright {
+	transform: skew(4deg, -3deg) rotateX(50deg);
+	right: 140px;
+	animation: pagesright 3s infinite ease-in-out alternate;
+}
+@keyframes pagesright {
+	from {
+		transform: skew(4deg, -3deg) rotateX(50deg);
+	}
+	to {
+		transform: skew(6deg, -8deg) rotateX(50deg) translate(-6px, -12px);
+	}
+}
+#pagesright::after {
+	background: linear-gradient(80deg, #b2b2a8, #94948a);
+	left: 3px;
+}
+.divider {
+	position: absolute;
+	background: linear-gradient(-45deg, #DDDAD8, #F5F4F3);
+	position: absolute;
+	width: 30px;
+	height: 210px;
+	top: 370px;
+}
+#dividerleft {
+	left: 370px;
+	transform: skewY(20deg);
+	animation: dividerleft 3s infinite ease-in-out alternate;
+}
+@keyframes dividerleft {
+	from {
+		transform: skewY(20deg);
+	}
+	to {
+		transform: skewY(20deg) translateY(2px);
+	}
+}
+#dividerright {
+	right: 370px;
+	transform: scale(-1, 1) skewY(20deg);
+	animation: dividerright 3s infinite ease-in-out alternate;
+}
+@keyframes dividerright {
+	from {
+		transform: scale(-1, 1) skewY(20deg);
+	}
+	to {
+		transform: scale(-1, 1) skewY(20deg) translateY(2px);
+	}
+}
+.divider::before {
+	content: '';
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 100%;
+	background: linear-gradient(-90deg, #0001, #0000);
+}
+.divider::after {
+	content: '';
+	top: 100%;
+	right: 0;
+	position: absolute;
+	width: 120%;
+	height: 30px;
+	background: #B1B1A7;
+	transform: skewY(-10deg);
+}
+#backpaper {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	top: 550px;
+	left: 350px;
+	background-color: #DBD8D6;
+}
+.letter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: transform 2.5s ease-in-out, opacity 0.3s linear;
+}
+
+.fallingletter {
+	position: fixed;
+	transition: transform 2.5s ease-in;
+	top: 0;
+	left: 0;
+}
